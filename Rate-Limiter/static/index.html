@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Limited API</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        #response { margin-top: 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>API Rate Limiting Demo</h1>
+    <button onclick="makeRequest()">Make API Request</button>
+    <p id="response"></p>
+
+    <script>
+        async function makeRequest() {
+            const response = await fetch('/api/request');
+            const data = await response.json();
+            document.getElementById('response').innerText = data.message + 
+                (data.remaining !== undefined ? ` (Remaining: ${data.remaining})` : "");
+        }
+    </script>
+</body>
+</html>
+

@@ -8,7 +8,6 @@ x-replica-common: &replica-common
       - redis-master
     command: ["redis-server", "--replicaof", "172.23.0.10", "6379"]
 
-
 x-sentinel-common: &sentinel-common 
     build: ./sentinel
     depends_on:
