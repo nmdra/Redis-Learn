@@ -1,0 +1,3 @@
+[submodule "Redis-Bloom-Filter"]
+	path = Redis-Bloom-Filter
+	url = https://github.com/nmdra/bloom-filter-redis
